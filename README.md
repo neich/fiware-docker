@@ -11,7 +11,7 @@ Some GEs share a base image that only has to be built once.
 You can build this image with:
 
 ```
-make base_centos63
+make base_centos63-image
 ```
 
 ### Orion
@@ -20,15 +20,15 @@ Depends on ```base_centos63```
 
 An image of the The Orion context broker can be build with:
 
-```make GIT_URL=... GIT_BRANCH=... orion```
+```make GIT_URL=... GIT_BRANCH=... orion-image```
 
 That means that you can build an image of any branch that you choose. For example:
 
 ```
 # Build bleeding edge version
-make GIT_URL=https://github.com/telefonicaid/fiware-orion.git GIT_BRANCH=develop orion
+make GIT_URL=https://github.com/telefonicaid/fiware-orion.git GIT_BRANCH=develop orion-image
 # Build an specific release
-make GIT_URL=https://github.com/telefonicaid/fiware-orion.git GIT_BRANCH=release/0.9.1 orion
+make GIT_URL=https://github.com/telefonicaid/fiware-orion.git GIT_BRANCH=release/0.9.1 orion-image
 ```
 
 Or you can use forked repositories to build versions with features still pending in a pull request. For exemple, if you want to use Docker with CORS support (as of 13/04/2015):
