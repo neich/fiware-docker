@@ -20,8 +20,8 @@ endif
 
 orion-image: check-version
 	sed -r -e "s/GIT_URL/$(shell echo $(GIT_URL) | sed -e 's/[]\/$*.^|[]/\\&/g')/g" -e "s/GIT_BRANCH/$(shell echo $(GIT_BRANCH) | sed -e 's/[]\/$*.^|[]/\\&/g')/g" orion/bin/install-orion.sh.template > orion/bin/install-orion.sh
-	sudo docker build -t ubikwa:orion orion/
+	docker build -t ubikwa:orion orion/
 	
 base_centos63-image:  
-	sudo docker build -t ubikwa:base_centos63 base_centos63/
+	docker build -t ubikwa:base_centos63 base_centos63/
 	
