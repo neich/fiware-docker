@@ -2,25 +2,27 @@
 
 This is a set of Dockerfiles to allow Fiware users to "dockerize" some of the General Enabler implementations so you can easily rund the different services independently of the server type.
 
-## Base images
+## Orion
 
-Some GEs share a base image that only has to be built once.
+### Base images
 
-### CentOS 6.3
+We can build Orion docker image form different bases. Default one is Cento OS 6.3, but you cab also use Alpine Linux 3.1 (still not working)
+
+#### CentOS 6.3
 
 You can build this image with:
 
 ```
+cd orion
 make base_centos63-image
 ```
 
-### Orion
+### Orion image
 
-Depends on ```base_centos63```
 
-An image of the The Orion context broker can be build with:
+An image of the the Orion context broker can be build with (using CentOS 6.3 base):
 
-```make GIT_URL=... GIT_BRANCH=... orion-image```
+```make GIT_URL=... GIT_BRANCH=... orion_centos63-image```
 
 That means that you can build an image of any branch that you choose. For example:
 
@@ -35,10 +37,10 @@ Or you can use forked repositories to build versions with features still pending
 
 ```make GIT_URL=https://github.com/jmcanterafonseca/fiware-orion.git GIT_BRANCH=cors3 orion-image```
 
-### Running a GE
+## Running a GE
 
 Once you have built your image, you can run it with Docker. For exemple, if you want to run your Orion context broker:
 
-```sudo docker run -d -p 1026:1026 ubikwa:orion```
+```sudo docker run -d -p 1026:1026 ubikwa:orion_centos63```
 
 After that your server is listening on port 1026 and forwarding it to 1026 at your docker container.
