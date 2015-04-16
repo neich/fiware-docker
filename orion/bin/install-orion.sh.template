@@ -1,17 +1,15 @@
 #!/bin/bash
 
 cd
-
-# Cors version
-# git clone git@github.com:jmcanterafonseca/fiware-orion.git
-# cd fiware-orion
-# git checkout cors3
-
-# git clone https://github.com/telefonicaid/fiware-orion
-# git checkout master
 git clone GIT_URL
-git checkout GIT_BRANCH
 cd fiware-orion
+git checkout GIT_BRANCH
+
+sed -i.bak "s/ADD_SUBDIRECTORY(src\/app\/proxyCoap)/#ADD_SUBDIRECTORY(src\/app\/proxyCoap)/g" CMakeLists.txt
+rm -f test/functionalTest/cases/coap_basic.test
+rm -f test/functionalTest/cases/coap_command_line_options.test
+rm -f test/functionalTest/cases/coap_version.test
+
 make
 make install INSTALL_DIR=/usr
 
