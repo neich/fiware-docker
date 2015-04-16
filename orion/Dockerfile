@@ -1,4 +1,4 @@
-FROM ubikwa:base_centos63
+FROM ubikwa:base_alpine31
 
 COPY bin/install-extra.sh /usr/local/bin/install-extra.sh
 COPY bin/install-orion.sh /usr/local/bin/install-orion.sh
