@@ -6,7 +6,7 @@ This is a set of Dockerfiles to allow Fiware users to "dockerize" some of the Ge
 
 ### Base images
 
-We can build Orion docker image form different bases. Default one is Cento OS 6.3, but you cab also use Alpine Linux 3.1 (still not working)
+You can build Orion docker image form different bases. Default one is Cento OS 6.3, but you can also use Alpine Linux 3.1 (still not working)
 
 #### CentOS 6.3
 
@@ -20,11 +20,11 @@ make base_centos63-image
 ### Orion image
 
 
-An image of the the Orion context broker can be build with (using CentOS 6.3 base):
+An image of the the Orion context broker can be built with (using CentOS 6.3 base):
 
 ```make GIT_URL=... GIT_BRANCH=... orion_centos63-image```
 
-That means that you can build an image of any branch that you choose. For example:
+That means that you can build an image from any branch that you choose. For example:
 
 ```
 # Build bleeding edge version
